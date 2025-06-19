@@ -104,25 +104,46 @@
 # Rectangle_formula(l,b)
 
 
-BMI_calculator<-function(){
-  height<-as.numeric(readline("Enter height in meter : "))
-  weight<-as.numeric(readline("Enter weight in kg : "))
-  BMI<- weight/ (height^2)
-  
-  if(BMI < 18.5){
-    print("Underweight")
-  }else if(BMI>18.5 && BMI <24.9){
-    print("Normal")
-  }else if(BMI>25 && BMI<29.9){
-    print("Overweight")
-  }else if(BMI > 30){
-    print("Obese")
-  }else{
-    print("Invalid BMI")
-  }
-  cat("BMI is : ",BMI)
+# BMI_calculator<-function(){
+#   height<-as.numeric(readline("Enter height in meter : "))
+#   weight<-as.numeric(readline("Enter weight in kg : "))
+#   BMI<- weight/ (height^2)
+#   
+#   if(BMI < 18.5){
+#     print("Underweight")
+#   }else if(BMI>18.5 && BMI <24.9){
+#     print("Normal")
+#   }else if(BMI>25 && BMI<29.9){
+#     print("Overweight")
+#   }else if(BMI > 30){
+#     print("Obese")
+#   }else{
+#     print("Invalid BMI")
+#   }
+#   cat("BMI is : ",BMI)
+# }
+# BMI_calculator()
+
+# Temperature_converter<-function(){
+#   celsius<-as.numeric(readline("Enter temperature in celsius : "))
+#   f<-(celsius * 9/5) + 32
+#   k<-celsius + 272
+#   cat("Farenheit is : ",f,
+#       "\nKelvin is : ",k)
+# }
+# Temperature_converter()
+
+Simple_interest<-function(){
+  p<-as.numeric(readline("Principle is : "))
+  r<-as.numeric(readline("Rate is : "))
+  t<-as.numeric(readline("Time is : "))
+  SI<-(p * r * t) / 100
+  cat("Simple Interest is : ",SI)
 }
-BMI_calculator()
+Simple_interest()
+
+
+
 
 
 
