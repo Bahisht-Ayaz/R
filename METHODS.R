@@ -133,17 +133,44 @@
 # }
 # Temperature_converter()
 
-Simple_interest<-function(){
-  p<-as.numeric(readline("Principle is : "))
-  r<-as.numeric(readline("Rate is : "))
-  t<-as.numeric(readline("Time is : "))
-  SI<-(p * r * t) / 100
-  cat("Simple Interest is : ",SI)
+# VECTOR
+Prime_minister <- c("Liaquat Ali Khan","Zulfikar Ali Bhutto","Benazir Bhutto","Nawaz Sharif","Imran Khan","Shehbaz Sharif")
+
+for(a in Prime_minister){
+  print(a)
 }
-Simple_interest()
 
+print(Prime_minister[-2])
+print(Prime_minister[c(3,5)])
+print(Prime_minister[c(-2,-5)])
+print(Prime_minister[1:4])
 
+# LIST
+movie <- list(
+  name = "Damsel",
+  budget = "$60-$70 million",
+  genre = "Adventure" ,
+  cast = c("Brooke Carter","Millie Bobby Brown","Nick Robinson","Sam Sharma"),
+  available_on_ott = "Netflix",
+  verdict = "Hit"
+)
+cat("Movie name is : ",movie$name,"\nCast is : ",movie$cast)
+cat("\n\nMovie name is : ",movie$name,"\nGenre is : ",movie$genre)
+cat("\n\nMovie name is : ",movie$name,"\nVerdict is : ",movie$verdict)
 
+# DATA FRAME
+movie_name <- c("Don't Breathe","The Silence","Evil Dead Rise","Creep","Crawl")
+movie_genre <- c("Horror","Horror","Horror","Adventure","Thriller")
+movie_cast <- c("Stephen Lang","John Corbett","Alyssa Sutherland","Mark Duplass","Morfydd Clark")
+available_on_ott <- c("Netflix","Netflix","Netflix","Netflix","Netflix")
+movie_verdict<- c("Hit","Hit","Hit","Flop","Hit")
 
-
+movie_info <- data.frame(
+  Name = movie_name,
+  Genre= movie_genre,
+  Cast=movie_cast,
+  Available_on= available_on_ott,
+  Verdict=movie_verdict
+)
+print(movie_info)
 
