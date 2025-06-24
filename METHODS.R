@@ -179,7 +179,7 @@ no_of_late_arrival<-c(2,4,3,0,1)
 department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept")
 designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo")
 gender<-c("Male","Female","Male","Male","Female")
-is_permanent<-c(True,True,False,True,False)
+is_permanent<-c(TRUE,TRUE,FALSE,TRUE,FALSE)
 
 Employee_info<-data.frame(
   Name=name,
@@ -193,5 +193,48 @@ Employee_info<-data.frame(
 print(Employee_info)
 # Display all employee names and their departments.
 print(Employee_info[,c(1,4)])
+
 # Show only permanent employees. 
-print(Employee_info[Employee_info$is_permanent == True,])
+print(Employee_info[Employee_info$Is_Permanent == TRUE,])
+
+# Filter employees from the IT department.
+print(Employee_info[Employee_info$Department=="IT Dept",])
+
+# Find employees with more than 2 late arrivals.
+print(Employee_info[Employee_info$Late_Arrival>2,])
+
+# Display names and designations of employees who are not permanent.
+print(Employee_info[Employee_info$Is_Permanent == FALSE,c(1,5)])
+
+# List of employees who had zero late arrivals.
+print(Employee_info[Employee_info$Late_Arrival==0,])
+
+# Show records from rows 2 to 5.
+print(Employee_info[2:5,])
+
+# Display names of employees at row positions 1,3, and 4.
+print(Employee_info[c(1,3,4),1])
+
+# Display only the Name and Department of employees from rows 1 to 3.
+print(Employee_info[1:3,c(1,4)])
+
+# Access the designation of the employee at row 4
+print(Employee_info[4,5])
+
+# Access the first 3 rows using head().
+print(head(Employee_info,n=3))
+
+# Access the last 2 rows using tail().
+print(tail(Employee_info,n=2))
+
+# Get the gender of the employee in row 2.
+print(Employee_info[2,6])
+
+# Show the 1st employee record.
+print(Employee_info[1,])
+
+# Add a new column called City showing the city where each employee is based.  
+Employee_info$city<-c("Karachi","Karachi","Islamabad","Lahore","Multan")
+
+# Add a new column Joining_Year to show the year each employee joined.
+Employee_info$joining_year<-c(2017,2024,2025,2021,2022)
