@@ -134,43 +134,64 @@
 # Temperature_converter()
 
 # VECTOR
-Prime_minister <- c("Liaquat Ali Khan","Zulfikar Ali Bhutto","Benazir Bhutto","Nawaz Sharif","Imran Khan","Shehbaz Sharif")
+# Prime_minister <- c("Liaquat Ali Khan","Zulfikar Ali Bhutto","Benazir Bhutto","Nawaz Sharif","Imran Khan","Shehbaz Sharif")
+# 
+# for(a in Prime_minister){
+#   print(a)
+# }
+# 
+# print(Prime_minister[-2])
+# print(Prime_minister[c(3,5)])
+# print(Prime_minister[c(-2,-5)])
+# print(Prime_minister[1:4])
+# 
+# # LIST
+# movie <- list(
+#   name = "Damsel",
+#   budget = "$60-$70 million",
+#   genre = "Adventure" ,
+#   cast = c("Brooke Carter","Millie Bobby Brown","Nick Robinson","Sam Sharma"),
+#   available_on_ott = "Netflix",
+#   verdict = "Hit"
+# )
+# cat("Movie name is : ",movie$name,"\nCast is : ",movie$cast)
+# cat("\n\nMovie name is : ",movie$name,"\nGenre is : ",movie$genre)
+# cat("\n\nMovie name is : ",movie$name,"\nVerdict is : ",movie$verdict)
+# 
+# # DATA FRAME
+# movie_name <- c("Don't Breathe","The Silence","Evil Dead Rise","Creep","Crawl")
+# movie_genre <- c("Horror","Horror","Horror","Adventure","Thriller")
+# movie_cast <- c("Stephen Lang","John Corbett","Alyssa Sutherland","Mark Duplass","Morfydd Clark")
+# available_on_ott <- c("Netflix","Netflix","Netflix","Netflix","Netflix")
+# movie_verdict<- c("Hit","Hit","Hit","Flop","Hit")
+# 
+# movie_info <- data.frame(
+#   Name = movie_name,
+#   Genre= movie_genre,
+#   Cast=movie_cast,
+#   Available_on= available_on_ott,
+#   Verdict=movie_verdict
+# )
+# print(movie_info)
+name<-c("Ali","Sara","Ahmed","Arham","Sania")
+no_of_working_days<-c(10,4,6,8,9)
+no_of_late_arrival<-c(2,4,3,0,1)
+department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept")
+designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo")
+gender<-c("Male","Female","Male","Male","Female")
+is_permanent<-c(True,True,False,True,False)
 
-for(a in Prime_minister){
-  print(a)
-}
-
-print(Prime_minister[-2])
-print(Prime_minister[c(3,5)])
-print(Prime_minister[c(-2,-5)])
-print(Prime_minister[1:4])
-
-# LIST
-movie <- list(
-  name = "Damsel",
-  budget = "$60-$70 million",
-  genre = "Adventure" ,
-  cast = c("Brooke Carter","Millie Bobby Brown","Nick Robinson","Sam Sharma"),
-  available_on_ott = "Netflix",
-  verdict = "Hit"
+Employee_info<-data.frame(
+  Name=name,
+  No_of_workingdays=no_of_working_days,
+  Late_Arrival=no_of_late_arrival,
+  Department=department,
+  Designation=designation,
+  Gender=gender,
+  Is_Permanent=is_permanent
 )
-cat("Movie name is : ",movie$name,"\nCast is : ",movie$cast)
-cat("\n\nMovie name is : ",movie$name,"\nGenre is : ",movie$genre)
-cat("\n\nMovie name is : ",movie$name,"\nVerdict is : ",movie$verdict)
-
-# DATA FRAME
-movie_name <- c("Don't Breathe","The Silence","Evil Dead Rise","Creep","Crawl")
-movie_genre <- c("Horror","Horror","Horror","Adventure","Thriller")
-movie_cast <- c("Stephen Lang","John Corbett","Alyssa Sutherland","Mark Duplass","Morfydd Clark")
-available_on_ott <- c("Netflix","Netflix","Netflix","Netflix","Netflix")
-movie_verdict<- c("Hit","Hit","Hit","Flop","Hit")
-
-movie_info <- data.frame(
-  Name = movie_name,
-  Genre= movie_genre,
-  Cast=movie_cast,
-  Available_on= available_on_ott,
-  Verdict=movie_verdict
-)
-print(movie_info)
-
+print(Employee_info)
+# Display all employee names and their departments.
+print(Employee_info[,c(1,4)])
+# Show only permanent employees. 
+print(Employee_info[Employee_info$is_permanent == True,])
