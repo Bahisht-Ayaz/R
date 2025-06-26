@@ -173,13 +173,13 @@
 #   Verdict=movie_verdict
 # )
 # print(movie_info)
-name<-c("Ali","Sara","Ahmed","Arham","Sania")
-no_of_working_days<-c(10,4,6,8,9)
-no_of_late_arrival<-c(2,4,3,0,1)
-department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept")
-designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo")
-gender<-c("Male","Female","Male","Male","Female")
-is_permanent<-c(TRUE,TRUE,FALSE,TRUE,FALSE)
+name<-c("Ali","Sara","Ahmed","Arham","Sania","Ayan")
+no_of_working_days<-c(10,4,6,8,9,28)
+no_of_late_arrival<-c(2,4,3,0,1,4)
+department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept","SRO Dept")
+designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo","Employee")
+gender<-c("Male","Female","Male","Male","Female","Male")
+is_permanent<-c(TRUE,TRUE,FALSE,TRUE,FALSE,TRUE)
 
 Employee_info<-data.frame(
   Name=name,
@@ -190,51 +190,92 @@ Employee_info<-data.frame(
   Gender=gender,
   Is_Permanent=is_permanent
 )
+# # Display all employee names and their departments.
+# print(Employee_info[,c(1,4)])
+# 
+# # Show only permanent employees. 
+# print(Employee_info[Employee_info$Is_Permanent == TRUE,])
+# 
+# # Filter employees from the IT department.
+# print(Employee_info[Employee_info$Department=="IT Dept",])
+# 
+# # Find employees with more than 2 late arrivals.
+# print(Employee_info[Employee_info$Late_Arrival>2,])
+# 
+# # Display names and designations of employees who are not permanent.
+# print(Employee_info[Employee_info$Is_Permanent == FALSE,c(1,5)])
+# 
+# # List of employees who had zero late arrivals.
+# print(Employee_info[Employee_info$Late_Arrival==0,])
+# 
+# # Show records from rows 2 to 5.
+# print(Employee_info[2:5,])
+# 
+# # Display names of employees at row positions 1,3, and 4.
+# print(Employee_info[c(1,3,4),1])
+# 
+# # Display only the Name and Department of employees from rows 1 to 3.
+# print(Employee_info[1:3,c(1,4)])
+# 
+# # Access the designation of the employee at row 4
+# print(Employee_info[4,5])
+# 
+# # Access the first 3 rows using head().
+# print(head(Employee_info,n=3))
+# 
+# # Access the last 2 rows using tail().
+# print(tail(Employee_info,n=2))
+# 
+# # Get the gender of the employee in row 2.
+# print(Employee_info[2,6])
+# 
+# # Show the 1st employee record.
+# print(Employee_info[1,])
+# 
+# # Add a new column called City showing the city where each employee is based.
+# Employee_info$city<-c("Karachi","Karachi","Islamabad","Lahore","Multan","Karachi")
+# 
+# # Add a new column Joining_Year to show the year each employee joined.
+# Employee_info$joining_year<-c(2017,2024,2025,2021,2022,2023)
+
+Employee_info$Gender<-NULL
+Employee_info$Designation<-NULL
+Employee_info$Is_Permanent<-NULL
+Employee_info$few_allowance<-NULL
+Employee_info$groc_salary<-NULL
+
+Employee_info$Basic_salary<-round(Employee_info$No_of_workingdays*1500)
+Employee_info$House_allowance<-round(Employee_info$Basic_salary*0.08)
+Employee_info$feul_allowance<-round(Employee_info$Basic_salary*0.04)
+Employee_info$medical_allowance<-round(Employee_info$Basic_salary*0.06)
+Employee_info$gross_salary<-Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
+
+# Descending Order
+descending_Order<-Employee_info[order(-Employee_info$gross_salary),]
+ascending_Order<-Employee_info[order(Employee_info$Late_Arrival),]
+print(descending_Order)
+print(ascending_Order)
+
+# Delete Row
+Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
+Employee_info<-Employee_info[Employee_info$gross_salary > 40,000,]
+Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
+
+# Add Row
+
+Employee_info<-rbind(Employee_info,c(
+    Name="Ghufran",
+    No_of_workingdays=25,
+    Late_Arrival=4,
+    city="NawabShah",
+    joining_year=2025,
+    Department="Networking Dept",
+    Basic_salary=round(Employee_info$No_of_workingdays*1500),
+    House_allowance=round(Employee_info$Basic_salary*0.08),
+    feul_allowance=round(Employee_info$Basic_salary*0.04),
+    medical_allowance=round(Employee_info$Basic_salary*0.06),
+  gross_salary=Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
+    
+  )
+)
 print(Employee_info)
-# Display all employee names and their departments.
-print(Employee_info[,c(1,4)])
-
-# Show only permanent employees. 
-print(Employee_info[Employee_info$Is_Permanent == TRUE,])
-
-# Filter employees from the IT department.
-print(Employee_info[Employee_info$Department=="IT Dept",])
-
-# Find employees with more than 2 late arrivals.
-print(Employee_info[Employee_info$Late_Arrival>2,])
-
-# Display names and designations of employees who are not permanent.
-print(Employee_info[Employee_info$Is_Permanent == FALSE,c(1,5)])
-
-# List of employees who had zero late arrivals.
-print(Employee_info[Employee_info$Late_Arrival==0,])
-
-# Show records from rows 2 to 5.
-print(Employee_info[2:5,])
-
-# Display names of employees at row positions 1,3, and 4.
-print(Employee_info[c(1,3,4),1])
-
-# Display only the Name and Department of employees from rows 1 to 3.
-print(Employee_info[1:3,c(1,4)])
-
-# Access the designation of the employee at row 4
-print(Employee_info[4,5])
-
-# Access the first 3 rows using head().
-print(head(Employee_info,n=3))
-
-# Access the last 2 rows using tail().
-print(tail(Employee_info,n=2))
-
-# Get the gender of the employee in row 2.
-print(Employee_info[2,6])
-
-# Show the 1st employee record.
-print(Employee_info[1,])
-
-# Add a new column called City showing the city where each employee is based.  
-Employee_info$city<-c("Karachi","Karachi","Islamabad","Lahore","Multan")
-
-# Add a new column Joining_Year to show the year each employee joined.
-Employee_info$joining_year<-c(2017,2024,2025,2021,2022)
