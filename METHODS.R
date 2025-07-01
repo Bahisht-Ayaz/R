@@ -173,23 +173,23 @@
 #   Verdict=movie_verdict
 # )
 # print(movie_info)
-name<-c("Ali","Sara","Ahmed","Arham","Sania","Ayan")
-no_of_working_days<-c(10,4,6,8,9,28)
-no_of_late_arrival<-c(2,4,3,0,1,4)
-department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept","SRO Dept")
-designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo","Employee")
-gender<-c("Male","Female","Male","Male","Female","Male")
-is_permanent<-c(TRUE,TRUE,FALSE,TRUE,FALSE,TRUE)
-
-Employee_info<-data.frame(
-  Name=name,
-  No_of_workingdays=no_of_working_days,
-  Late_Arrival=no_of_late_arrival,
-  Department=department,
-  Designation=designation,
-  Gender=gender,
-  Is_Permanent=is_permanent
-)
+# name<-c("Ali","Sara","Ahmed","Arham","Sania","Ayan")
+# no_of_working_days<-c(10,4,6,8,9,28)
+# no_of_late_arrival<-c(2,4,3,0,1,4)
+# department<-c("HR Dept","IT Dept","Management Dept","Networking Dept","Finance Dept","SRO Dept")
+# designation<-c("Manager","Assistant","Employee","Software Engineer","Ceo","Employee")
+# gender<-c("Male","Female","Male","Male","Female","Male")
+# is_permanent<-c(TRUE,TRUE,FALSE,TRUE,FALSE,TRUE)
+# 
+# Employee_info<-data.frame(
+#   Name=name,
+#   No_of_workingdays=no_of_working_days,
+#   Late_Arrival=no_of_late_arrival,
+#   Department=department,
+#   Designation=designation,
+#   Gender=gender,
+#   Is_Permanent=is_permanent
+# )
 # # Display all employee names and their departments.
 # print(Employee_info[,c(1,4)])
 # 
@@ -238,44 +238,56 @@ Employee_info<-data.frame(
 # # Add a new column Joining_Year to show the year each employee joined.
 # Employee_info$joining_year<-c(2017,2024,2025,2021,2022,2023)
 
-Employee_info$Gender<-NULL
-Employee_info$Designation<-NULL
-Employee_info$Is_Permanent<-NULL
-Employee_info$few_allowance<-NULL
-Employee_info$groc_salary<-NULL
+# Employee_info$Gender<-NULL
+# Employee_info$Designation<-NULL
+# Employee_info$Is_Permanent<-NULL
+# Employee_info$few_allowance<-NULL
+# Employee_info$groc_salary<-NULL
+# 
+# Employee_info$Basic_salary<-round(Employee_info$No_of_workingdays*1500)
+# Employee_info$House_allowance<-round(Employee_info$Basic_salary*0.08)
+# Employee_info$feul_allowance<-round(Employee_info$Basic_salary*0.04)
+# Employee_info$medical_allowance<-round(Employee_info$Basic_salary*0.06)
+# Employee_info$gross_salary<-Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
+# 
+# # Descending Order
+# descending_Order<-Employee_info[order(-Employee_info$gross_salary),]
+# ascending_Order<-Employee_info[order(Employee_info$Late_Arrival),]
+# print(descending_Order)
+# print(ascending_Order)
+# 
+# # Delete Row
+# Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
+# Employee_info<-Employee_info[Employee_info$gross_salary > 40,000,]
+# Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
+# 
+# # Add Row
+# 
+# Employee_info<-rbind(Employee_info,c(
+#     Name="Ghufran",
+#     No_of_workingdays=25,
+#     Late_Arrival=4,
+#     city="NawabShah",
+#     joining_year=2025,
+#     Department="Networking Dept",
+#     Basic_salary=round(Employee_info$No_of_workingdays*1500),
+#     House_allowance=round(Employee_info$Basic_salary*0.08),
+#     feul_allowance=round(Employee_info$Basic_salary*0.04),
+#     medical_allowance=round(Employee_info$Basic_salary*0.06),
+#   gross_salary=Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
+#     
+#   )
+# )
+# print(Employee_info)
 
-Employee_info$Basic_salary<-round(Employee_info$No_of_workingdays*1500)
-Employee_info$House_allowance<-round(Employee_info$Basic_salary*0.08)
-Employee_info$feul_allowance<-round(Employee_info$Basic_salary*0.04)
-Employee_info$medical_allowance<-round(Employee_info$Basic_salary*0.06)
-Employee_info$gross_salary<-Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
 
-# Descending Order
-descending_Order<-Employee_info[order(-Employee_info$gross_salary),]
-ascending_Order<-Employee_info[order(Employee_info$Late_Arrival),]
-print(descending_Order)
-print(ascending_Order)
+book_id <- c(101, 102, 103, 104, 105, 106, 107, 108, 109, 110)
+title <- c("To Kill a Mockingbird","A Brief History of Time","Sapiens","1984","The Selfish Gene","The Diary of a Young Girl","The Great Gatsby","Guns, Germs, and Steel","Thinking, Fast and Slow","Cosmos")
+author <- c("Harper Lee","Stephen Hawking","Yuval Noah Harari","George Orwell","Richard Dawkins","Anne Frank","F. Scott Fitzgerald","Jared Diamond","Daniel Kahneman")
+genre <- c("Fiction", "Science", "History","Fiction", "Science", "Non Fiction","Fiction", "History","Non Fiction", "Science")
+published_year<-c(1960, 1988, 2011, 1949, 1976, 1947, 1925, 1997, 2011, 1980)
+available_copies<-c(4,2,5,3,1,2,4,3,2,3)
 
-# Delete Row
-Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
-Employee_info<-Employee_info[Employee_info$gross_salary > 40,000,]
-Employee_info<-Employee_info[Employee_info$Late_Arrival > 0,]
-
-# Add Row
-
-Employee_info<-rbind(Employee_info,c(
-    Name="Ghufran",
-    No_of_workingdays=25,
-    Late_Arrival=4,
-    city="NawabShah",
-    joining_year=2025,
-    Department="Networking Dept",
-    Basic_salary=round(Employee_info$No_of_workingdays*1500),
-    House_allowance=round(Employee_info$Basic_salary*0.08),
-    feul_allowance=round(Employee_info$Basic_salary*0.04),
-    medical_allowance=round(Employee_info$Basic_salary*0.06),
-  gross_salary=Employee_info$Basic_salary +Employee_info$House_allowance +Employee_info$feul_allowance+Employee_info$medical_allowance
-    
-  )
+Library_books<-data.frame(
+  
 )
-print(Employee_info)
