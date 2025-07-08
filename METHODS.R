@@ -281,13 +281,185 @@
 # print(Employee_info)
 
 
-book_id <- c(101, 102, 103, 104, 105, 106, 107, 108, 109, 110)
-title <- c("To Kill a Mockingbird","A Brief History of Time","Sapiens","1984","The Selfish Gene","The Diary of a Young Girl","The Great Gatsby","Guns, Germs, and Steel","Thinking, Fast and Slow","Cosmos")
-author <- c("Harper Lee","Stephen Hawking","Yuval Noah Harari","George Orwell","Richard Dawkins","Anne Frank","F. Scott Fitzgerald","Jared Diamond","Daniel Kahneman")
-genre <- c("Fiction", "Science", "History","Fiction", "Science", "Non Fiction","Fiction", "History","Non Fiction", "Science")
-published_year<-c(1960, 1988, 2011, 1949, 1976, 1947, 1925, 1997, 2011, 1980)
-available_copies<-c(4,2,5,3,1,2,4,3,2,3)
+# book_id <- c(101, 102, 103, 104, 105, 106, 107, 108, 109, 110)
+# title <- c("To Kill a Mockingbird","A Brief History of Time","Sapiens","1984","The Selfish Gene","The Diary of a Young Girl","The Great Gatsby","Guns, Germs, and Steel","Thinking, Fast and Slow","Cosmos")
+# author <- c("Harper Lee","Stephen Hawking","Yuval Noah Harari","George Orwell","Richard Dawkins","Anne Frank","F. Scott Fitzgerald","Jared Diamond","Daniel Kahneman","Jane Austen")
+# genre <- c("Fiction", "Science", "History","Fiction", "Science", "Non Fiction","Fiction", "History","Non Fiction", "Science")
+# published_year<-c(1960, 1988, 2011, 1949, 1976, 1947, 1925, 1997, 2011, 1980)
+# available_copies<-c(4,2,5,3,1,2,4,3,2,3)
+# 
+# Library_books<-data.frame(
+#   Book_Id=book_id,
+#   Title=title,
+#   Author=author,
+#   Genre=genre,
+#   Published_year=published_year,
+#   Available_copies=available_copies
+# )
+# # Display books from row 4 to row 8.
+# print(Library_books[4:8,])
+# 
+# # Filter and display books where Genre is "Fiction".
+# print(Library_books[Library_books$Genre=="Fiction",])
+# 
+# # Show books published after 2015.
+# print(Library_books[Library_books$Published_year>2015,])
+# 
+# # Delete the column "Published Year" from the DataFrame.
+# Library_books$Published_year<-NULL
+# 
+# # Delete the row where Book ID is 103
+# Library_books<-Library_books[Library_books$Book_Id != 103,]
+# 
+# # Add a new column called "Status" where:
+# # If available copies ≥ 5 → "Available"
+# # Otherwise → "Low Stock"
+# Library_books$Status <- ifelse(Library_books$Available_copies > 5, "Available", "Low Stock")
+# 
+# # Replace the Genre “Science” with “Scientific”.
+# Library_books$Genre[Library_books$Genre == "Science"] <- "Scientific"
+# 
+# # Save the final DataFrame to a CSV file named library_books.csv.
+# write.csv(Library_books, "library_books.csv", row.names = FALSE)
+# 
+# # Display records from row index 2 to 6 of the DataFrame.
+# print(Library_books[2:6,])
+# 
+# # Show only the book titles and their authors.
+# print(Library_books[,c(2,3)])
+# 
+# # Filter and display the books where the genre is "Non Fiction".
+# print(Library_books[Library_books$Genre == "Non Fiction",])
+# 
+# # Add the column "Price"
+# Library_books$Price<-c(1500,4200,400,4700,800,3500,1200,450,3800)
+# nrow(Library_books)
+# 
+# # Display books that were price greater than 3000
+# print(Library_books[Library_books$Price>3000,])
+# 
+# # Display books that were price less than 500.
+# print(Library_books[Library_books$Price<500,])
+# 
+# # Show books that have less than 3 available copies.
+# print(Library_books[Library_books$Available_copies<3,])
+# 
+# # Delete the row where the Book ID is 105
+# Library_books<-Library_books[Library_books$Book_Id != 105,]
+# 
+# # Save the data of only Fiction books to a CSV file.
+# fiction_books <- Library_books[Library_books$Genre == "Fiction", ]
+# write.csv(fiction_books, "fiction_books.csv", row.names = FALSE)
+# getwd()
+# 
+# # Delete the row where the Book ID is 101.
+# Library_books<-Library_books[Library_books$Book_Id != 101,]
+# 
+# # Remove all rows where the genre is "History".
+# Library_books<-Library_books[Library_books$Genre != "History",]
+# 
+# # Delete rows where the number of available copies is 0.
+# Library_books<-Library_books[Library_books$Available_copies != 0,]
+# 
+# # Delete all rows where the title is  "Guide"
+# Library_books<-Library_books[Library_books$Title != "Guide",]
+# 
+# # Delete all rows where the genre is either "Fiction" or "Science".
+# Library_books <- Library_books[!(Library_books$Genre %in% c("Fiction", "Science")), ]
+# 
+# # Remove books where the available copies are less than 2 and the genre is "Non-Fiction".
+# Library_books <- Library_books[!(Library_books$Available_copies < 2 & Library_books$Genre == "Non Fiction"), ]
+# 
+# print(Library_books)
 
-Library_books<-data.frame(
-  
-)
+order_id<-c(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010)
+customer_name<-c("Amna", "Sara", "Ahmed", "Zara", "Bilal", "Ali", "Fatima", "Sania", "Ayesha", "Hassan")
+product<-c("Laptop", "T-Shirt", "Charger", "Rice", "Book", "Mobile", "Jeans", "Camera", "Milk", "Headphones")
+category<-c("Electronics", "Clothing", "Electronics", "Grocery", "Books", "Electronics", "Clothing", "Electronics", "Grocery", "Electronics")
+order_date<-c("2025-07-01", "2025-07-01", "2025-07-02", "2025-07-02", "2025-07-03", "2025-07-03", "2025-07-04", "2025-07-04", "2025-07-05", "2025-07-05")
+quantity<-c(1, 2, 1, 10, 1, 1, 6, 3, 2, 5)
+price_per_unit<-c(80000, 1200, 1000, 150, 700, 60000, 2000, 35000, 120, 7000)
+
+online_shopping<-data.frame(
+    Order_Id=order_id,
+    Customer_Name=customer_name,
+    Product=product,
+    Category=category,
+    Order_Date=order_date,
+    Quantity=quantity,
+    Price_per_unit=price_per_unit
+  )
+
+# Display orders from row 2 to row 6.
+print(online_shopping[2:6,])
+
+# Filter and show all orders in the "Electronics" category.
+print(online_shopping[online_shopping$Category=="Electronics",])
+
+# Show all orders where Quantity is more than 3.
+print(online_shopping[online_shopping$Quantity>3,])
+
+# Delete the column "Order Date".
+online_shopping$Order_Date<-NULL
+
+# Delete the row where Order ID is 1003.
+online_shopping<-online_shopping[online_shopping$Order_Id != 1003,]
+
+# Add a new column Total Price = Quantity × Price per Unit.
+online_shopping$Total_Price<-round(online_shopping$Quantity*online_shopping$Price_per_unit)
+
+# Add a new column Status:
+# If Quantity ≥ 5 → “Bulk”
+# Else → “Standard”
+online_shopping$Status <- ifelse(online_shopping$Quantity > 5, "Bulk", "Standard")
+
+# Replace Category “Books” with “Bookstore”.
+online_shopping$Category[online_shopping$Category == "Book"] <- "Bookstore"
+
+# Save the updated DataFrame as orders_data.csv.
+write.csv(online_shopping, "orders_data.csv", row.names = FALSE)
+
+# Display only the Product and Quantity columns.
+print(online_shopping[,c(3,5)])
+
+# Show orders where price per unit > 5000.
+print(online_shopping[online_shopping$Price_per_unit>5000,])
+
+# Show orders where quantity < 2.
+print(online_shopping[online_shopping$Quantity<2,])
+
+# Show orders where the total price > 10000.
+print(online_shopping[online_shopping$Total_Price> 10000,])
+
+# Add a column called Delivery Charge:
+# If total price ≥ 10000 → 0
+# Else → 200
+online_shopping$Delivery_charge <- ifelse(online_shopping$Total_Price >= 10000, 0, 200)
+
+# Delete row where Order ID is 1006.
+online_shopping<-online_shopping[online_shopping$Order_Id != 1006,]
+
+# Save all "Clothing" category orders to a new file clothing_orders.csv.
+cloting_orders <- online_shopping[online_shopping$Category == "Clothing", ]
+write.csv(cloting_orders, "clothing_orders.csv", row.names = FALSE)
+
+# Remove rows where the product is "Charger".
+online_shopping<-online_shopping[online_shopping$Product != "Charger",]
+
+# Delete all rows where category is “Grocery”.
+online_shopping<-online_shopping[online_shopping$Category != "Grocery",]
+
+# Delete all rows where total price is 0.
+online_shopping<-online_shopping[online_shopping$Total_Price != 0,]
+
+# Show orders where status is "Standard" and category is "Electronics".
+print(online_shopping[online_shopping$Status == "Standard" & online_shopping$Category == "Electronics",])
+
+# Remove rows where quantity is less than 2 and category is "Books".
+online_shopping <- online_shopping[!(online_shopping$Quantity < 2 & online_shopping$Category == "Books"), ]
+
+# Remove all rows where customer name is "Ali".
+online_shopping<-online_shopping[online_shopping$Customer_Name != "Ali",]
+
+print(online_shopping)
+

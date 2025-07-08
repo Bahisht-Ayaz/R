@@ -1,0 +1,3 @@
+"Order_Id","Customer_Name","Product","Category","Quantity","Price_per_unit","Total_Price","Status","Delivery_charge"
+1002,"Sara","T-Shirt","Clothing",2,1200,2400,"Standard",200
+1007,"Fatima","Jeans","Clothing",6,2000,12000,"Bulk",0
