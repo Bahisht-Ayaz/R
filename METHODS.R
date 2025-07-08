@@ -372,94 +372,105 @@
 # 
 # print(Library_books)
 
-order_id<-c(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010)
-customer_name<-c("Amna", "Sara", "Ahmed", "Zara", "Bilal", "Ali", "Fatima", "Sania", "Ayesha", "Hassan")
-product<-c("Laptop", "T-Shirt", "Charger", "Rice", "Book", "Mobile", "Jeans", "Camera", "Milk", "Headphones")
-category<-c("Electronics", "Clothing", "Electronics", "Grocery", "Books", "Electronics", "Clothing", "Electronics", "Grocery", "Electronics")
-order_date<-c("2025-07-01", "2025-07-01", "2025-07-02", "2025-07-02", "2025-07-03", "2025-07-03", "2025-07-04", "2025-07-04", "2025-07-05", "2025-07-05")
-quantity<-c(1, 2, 1, 10, 1, 1, 6, 3, 2, 5)
-price_per_unit<-c(80000, 1200, 1000, 150, 700, 60000, 2000, 35000, 120, 7000)
+# order_id<-c(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010)
+# customer_name<-c("Amna", "Sara", "Ahmed", "Zara", "Bilal", "Ali", "Fatima", "Sania", "Ayesha", "Hassan")
+# product<-c("Laptop", "T-Shirt", "Charger", "Rice", "Book", "Mobile", "Jeans", "Camera", "Milk", "Headphones")
+# category<-c("Electronics", "Clothing", "Electronics", "Grocery", "Books", "Electronics", "Clothing", "Electronics", "Grocery", "Electronics")
+# order_date<-c("2025-07-01", "2025-07-01", "2025-07-02", "2025-07-02", "2025-07-03", "2025-07-03", "2025-07-04", "2025-07-04", "2025-07-05", "2025-07-05")
+# quantity<-c(1, 2, 1, 10, 1, 1, 6, 3, 2, 5)
+# price_per_unit<-c(80000, 1200, 1000, 150, 700, 60000, 2000, 35000, 120, 7000)
+# 
+# online_shopping<-data.frame(
+#     Order_Id=order_id,
+#     Customer_Name=customer_name,
+#     Product=product,
+#     Category=category,
+#     Order_Date=order_date,
+#     Quantity=quantity,
+#     Price_per_unit=price_per_unit
+#   )
+# 
+# # Display orders from row 2 to row 6.
+# print(online_shopping[2:6,])
+# 
+# # Filter and show all orders in the "Electronics" category.
+# print(online_shopping[online_shopping$Category=="Electronics",])
+# 
+# # Show all orders where Quantity is more than 3.
+# print(online_shopping[online_shopping$Quantity>3,])
+# 
+# # Delete the column "Order Date".
+# online_shopping$Order_Date<-NULL
+# 
+# # Delete the row where Order ID is 1003.
+# online_shopping<-online_shopping[online_shopping$Order_Id != 1003,]
+# 
+# # Add a new column Total Price = Quantity × Price per Unit.
+# online_shopping$Total_Price<-round(online_shopping$Quantity*online_shopping$Price_per_unit)
+# 
+# # Add a new column Status:
+# # If Quantity ≥ 5 → “Bulk”
+# # Else → “Standard”
+# online_shopping$Status <- ifelse(online_shopping$Quantity > 5, "Bulk", "Standard")
+# 
+# # Replace Category “Books” with “Bookstore”.
+# online_shopping$Category[online_shopping$Category == "Book"] <- "Bookstore"
+# 
+# # Save the updated DataFrame as orders_data.csv.
+# write.csv(online_shopping, "orders_data.csv", row.names = FALSE)
+# 
+# # Display only the Product and Quantity columns.
+# print(online_shopping[,c(3,5)])
+# 
+# # Show orders where price per unit > 5000.
+# print(online_shopping[online_shopping$Price_per_unit>5000,])
+# 
+# # Show orders where quantity < 2.
+# print(online_shopping[online_shopping$Quantity<2,])
+# 
+# # Show orders where the total price > 10000.
+# print(online_shopping[online_shopping$Total_Price> 10000,])
+# 
+# # Add a column called Delivery Charge:
+# # If total price ≥ 10000 → 0
+# # Else → 200
+# online_shopping$Delivery_charge <- ifelse(online_shopping$Total_Price >= 10000, 0, 200)
+# 
+# # Delete row where Order ID is 1006.
+# online_shopping<-online_shopping[online_shopping$Order_Id != 1006,]
+# 
+# # Save all "Clothing" category orders to a new file clothing_orders.csv.
+# cloting_orders <- online_shopping[online_shopping$Category == "Clothing", ]
+# write.csv(cloting_orders, "clothing_orders.csv", row.names = FALSE)
+# 
+# # Remove rows where the product is "Charger".
+# online_shopping<-online_shopping[online_shopping$Product != "Charger",]
+# 
+# # Delete all rows where category is “Grocery”.
+# online_shopping<-online_shopping[online_shopping$Category != "Grocery",]
+# 
+# # Delete all rows where total price is 0.
+# online_shopping<-online_shopping[online_shopping$Total_Price != 0,]
+# 
+# # Show orders where status is "Standard" and category is "Electronics".
+# print(online_shopping[online_shopping$Status == "Standard" & online_shopping$Category == "Electronics",])
+# 
+# # Remove rows where quantity is less than 2 and category is "Books".
+# online_shopping <- online_shopping[!(online_shopping$Quantity < 2 & online_shopping$Category == "Books"), ]
+# 
+# # Remove all rows where customer name is "Ali".
+# online_shopping<-online_shopping[online_shopping$Customer_Name != "Ali",]
+# 
+# print(online_shopping)
 
-online_shopping<-data.frame(
-    Order_Id=order_id,
-    Customer_Name=customer_name,
-    Product=product,
-    Category=category,
-    Order_Date=order_date,
-    Quantity=quantity,
-    Price_per_unit=price_per_unit
+employee_profile <- list(
+    Emp_ID = "Damsel",
+    budget = "$60-$70 million",
+    genre = "Adventure" ,
+    cast = c("Brooke Carter","Millie Bobby Brown","Nick Robinson","Sam Sharma"),
+    available_on_ott = "Netflix",
+    verdict = "Hit"
   )
 
-# Display orders from row 2 to row 6.
-print(online_shopping[2:6,])
 
-# Filter and show all orders in the "Electronics" category.
-print(online_shopping[online_shopping$Category=="Electronics",])
-
-# Show all orders where Quantity is more than 3.
-print(online_shopping[online_shopping$Quantity>3,])
-
-# Delete the column "Order Date".
-online_shopping$Order_Date<-NULL
-
-# Delete the row where Order ID is 1003.
-online_shopping<-online_shopping[online_shopping$Order_Id != 1003,]
-
-# Add a new column Total Price = Quantity × Price per Unit.
-online_shopping$Total_Price<-round(online_shopping$Quantity*online_shopping$Price_per_unit)
-
-# Add a new column Status:
-# If Quantity ≥ 5 → “Bulk”
-# Else → “Standard”
-online_shopping$Status <- ifelse(online_shopping$Quantity > 5, "Bulk", "Standard")
-
-# Replace Category “Books” with “Bookstore”.
-online_shopping$Category[online_shopping$Category == "Book"] <- "Bookstore"
-
-# Save the updated DataFrame as orders_data.csv.
-write.csv(online_shopping, "orders_data.csv", row.names = FALSE)
-
-# Display only the Product and Quantity columns.
-print(online_shopping[,c(3,5)])
-
-# Show orders where price per unit > 5000.
-print(online_shopping[online_shopping$Price_per_unit>5000,])
-
-# Show orders where quantity < 2.
-print(online_shopping[online_shopping$Quantity<2,])
-
-# Show orders where the total price > 10000.
-print(online_shopping[online_shopping$Total_Price> 10000,])
-
-# Add a column called Delivery Charge:
-# If total price ≥ 10000 → 0
-# Else → 200
-online_shopping$Delivery_charge <- ifelse(online_shopping$Total_Price >= 10000, 0, 200)
-
-# Delete row where Order ID is 1006.
-online_shopping<-online_shopping[online_shopping$Order_Id != 1006,]
-
-# Save all "Clothing" category orders to a new file clothing_orders.csv.
-cloting_orders <- online_shopping[online_shopping$Category == "Clothing", ]
-write.csv(cloting_orders, "clothing_orders.csv", row.names = FALSE)
-
-# Remove rows where the product is "Charger".
-online_shopping<-online_shopping[online_shopping$Product != "Charger",]
-
-# Delete all rows where category is “Grocery”.
-online_shopping<-online_shopping[online_shopping$Category != "Grocery",]
-
-# Delete all rows where total price is 0.
-online_shopping<-online_shopping[online_shopping$Total_Price != 0,]
-
-# Show orders where status is "Standard" and category is "Electronics".
-print(online_shopping[online_shopping$Status == "Standard" & online_shopping$Category == "Electronics",])
-
-# Remove rows where quantity is less than 2 and category is "Books".
-online_shopping <- online_shopping[!(online_shopping$Quantity < 2 & online_shopping$Category == "Books"), ]
-
-# Remove all rows where customer name is "Ali".
-online_shopping<-online_shopping[online_shopping$Customer_Name != "Ali",]
-
-print(online_shopping)
 
