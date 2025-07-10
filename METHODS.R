@@ -372,6 +372,8 @@
 # 
 # print(Library_books)
 
+# Online Orders Management using DataFrames
+
 # order_id<-c(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010)
 # customer_name<-c("Amna", "Sara", "Ahmed", "Zara", "Bilal", "Ali", "Fatima", "Sania", "Ayesha", "Hassan")
 # product<-c("Laptop", "T-Shirt", "Charger", "Rice", "Book", "Mobile", "Jeans", "Camera", "Milk", "Headphones")
@@ -463,14 +465,40 @@
 # 
 # print(online_shopping)
 
+ # EMPLOYEE LIST
+
 employee_profile <- list(
-    Emp_ID = "Damsel",
-    budget = "$60-$70 million",
-    genre = "Adventure" ,
-    cast = c("Brooke Carter","Millie Bobby Brown","Nick Robinson","Sam Sharma"),
-    available_on_ott = "Netflix",
-    verdict = "Hit"
+    Emp_ID = "1",
+    Name = "Hamza Sheikh",
+    Department = "Manager Dept",
+    Skills  = c("Javascript","Python","Flutter"),
+    Experience  = 6,
+    IsPermanent  = TRUE
   )
+# Print the structure of the list using the str() function.
+print(str(employee_profile))
+
+# Access and print the Department from the list.
+print(employee_profile$Department)
+
+# Access and print the first skill from the Skills vector.
+print(employee_profile$Skills[1])
+
+# Update the Experience value to 5.
+employee_profile$Experience = 5
+
+# Add a new element to the list: Salary = 75000.
+employee_profile$Salary<-75000
+
+# Add a new skill "Docker" to the existing Skills
+employee_profile$Skills <- c(employee_profile$Skills, "Docker")
+
+# Replace the Department value with "DevOps".
+employee_profile$Department = "DevOps"
+
+# Remove the IsPermanent field from the list.
+employee_profile$IsPermanent<-NULL
 
 
-
+# Display the final employee_profile list.
+print(employee_profile)
